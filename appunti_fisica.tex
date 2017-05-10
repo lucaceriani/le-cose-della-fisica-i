@@ -1,10 +1,11 @@
 \documentclass[12pt, oneside]{book}
 \usepackage[italian]{babel}
 \usepackage{amsmath}
-\usepackage[a4paper, total={6in, 9in}]{geometry}
+\usepackage[a4paper]{geometry}
 \linespread{1.33}
 \usepackage[utf8]{inputenc}
 \usepackage{enumerate}
+%\usepackage{afterpage}
 \usepackage{makeidx}
 
 \newcommand{\pvec}[1]{\vec{#1}\mkern2mu\vphantom{#1}}
@@ -15,8 +16,9 @@
 
 \begin{document}
 \maketitle
-\thispagestyle{empty}
 \newpage
+%\afterpage{\null\thispagestyle{empty}\newpage}
+\cleardoublepage
 
 \chapter{Cinematica}
 
@@ -28,7 +30,7 @@ Si consideri poi il vettore tangente alla traiettoria $\hat{u}_t$, esso può ess
 = \frac{d\vec{r}}{ds}\]
 e quindi
 \[\vec{v}=\frac{d\vec{r}}{dt}=\frac{d\vec{r}}{ds}\frac{ds}{dt}=\frac{ds}{dt}\hat{u}_t~.\]
-Notare che l'espressione $\frac{ds}{dt}$ rpende il nome di velocità scalare:
+Notare che l'espressione $\frac{ds}{dt}$ prende il nome di velocità scalare:
 \[v_s=\frac{ds}{dt}~.\]
 
 \section{Accelerazione}
@@ -67,7 +69,10 @@ dove
 Si può anche definire un'\textbf{accelerazione angolare} come segue:
 \[\vec{\alpha}(t)=\frac{d\vec{\omega}}{dt}=\frac{d\omega}{dt}\hat{k}=\ddot{\theta}\hat{k}~,\]
 e quindi
-\[\vec{a}=\vec{\alpha}\times\vec{r}+\vec{\omega}\times(\vec{\omega}\times\vec{r})~.\]
+\begin{equation}
+\label{ainaplha}
+\vec{a}=\vec{\alpha}\times\vec{r}+\vec{\omega}\times(\vec{\omega}\times\vec{r})~.
+\end{equation}
 \bigskip
 
 \section{Moto circolare uniforme}
@@ -104,6 +109,7 @@ Se si suppongo lo \emph{spazio e il tempo assoluti} e considerato $\vec{R}=\over
 dove $\vec{v_\tau}$ è detta \emph{velocità di trascinamento}.
 Posto $\vec{V}(t)=\dfrac{d\vec{R}}{dt}$, allore la velocità di trascinamento si potrà esprimere nella forma
 \begin{equation}
+\label{vtau}
 \vec{v}_\tau(t)=\vec{V}(t)+\vec{\omega}(t)\times[\vec{r}(t)-\vec{R}(t)]~.
 \end{equation}
 Questo perché la velocità di trascinamento non è uguale per ogni punto di $S'$ (qualsiasi caso di moto non puramente traslatorio). In particolare si possono dietinguere due casi:
@@ -111,10 +117,34 @@ Questo perché la velocità di trascinamento non è uguale per ogni punto di $S'
 	\item $\vec{\omega}=0$\\
 	in questo caso si parla di \textbf{moto traslatorio}, tutti i punti di $S'$ si muovono alla stessa velocità: $\vec{v}_\tau(t)=\vec{V}$~;
 	\item $\vec{\omega}\neq 0$\\
-	$\vec{v}_\tau$ varia da punto a punto, se si considera la sola coponente di rotazione la (1.1) può essere riscritta come
-	\[\vec{v}_\tau=\vec{\omega}\times(\vec{r}-\vec{R})\]
+	$\vec{v}_\tau$ varia da punto a punto, se si considera la sola coponente di rotazione la (\ref{vtau}) può essere riscritta come
+	\[\vec{v}_\tau=\vec{\omega}\times(\vec{r}-\vec{R})~.\]
 \end{enumerate}
-
+Si dimostra che la dipendenza tra $\vec{a}$ e $\pvec{a}'$ è più conmplessa e risulta essere
+\begin{equation}
+\label{aaprime}
+\vec{a}=\pvec{a}' + \vec{a}_\tau + \vec{a}_{co}~.
+\end{equation}
+\newpage
+Dove, considerando la (\ref{ainaplha}) e la (\ref{aaprime}) si può scrivere:
+\[\vec a_\tau=\vec A+\vec \alpha \times(\vec{r}-\vec{R})+\vec{\omega}\times[\vec{\omega}\times (\vec{r}-\vec{R})]\]
+e
+\[\vec{a}_{co}=2\vec{\omega}\times\pvec v'\]
+\section{Trasformazioni di Galileo}
+In breve, tenendo conto che $\vec R = \vec V t$, allora si dicono trasformazioni di Galielo le seguenti
+\begin{align*}
+	\begin{cases}
+		\vec r = \pvec r' + \vec V t'\\
+		t=t'
+	\end{cases}~,
+\end{align*}
+e per $\vec V = costante$ si ha:
+\begin{align*}
+	\begin{cases}
+		\vec v = \pvec v' + \vec V\\
+		\vec a = \pvec a'
+	\end{cases}~.
+\end{align*}
 \end{document}
 
 
