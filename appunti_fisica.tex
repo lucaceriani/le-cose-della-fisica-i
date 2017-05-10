@@ -1,0 +1,91 @@
+\documentclass{article}
+\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\linespread{1.33}
+\usepackage[utf8]{inputenc}
+\usepackage{enumerate}
+
+\title{\vspace*{\fill}\Huge{Le cose della Fisica I}} % Title
+\author{Luca Ceriani\bigskip}
+\date{Torino, \today\vspace*{\fill}}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\newpage
+\section{Cinematica}
+
+\subsection{Velocità}
+Tenendo conto della definizione di derivata di un vettore, la velocità si può scrivere come
+\[\vec{v}(t)=\frac{d\vec{r}(t)}{dt}\]
+Si consideri poi il vettore tangente alla traiettoria $\hat{u}_t$, esso può essere espresso come
+\[\hat{u}_t=\lim_{\Delta s\rightarrow 0}\dfrac{\Delta\vec{r}}{\Delta s}
+= \frac{d\vec{r}}{ds}\]
+e quindi
+\[\vec{v}=\frac{d\vec{r}}{dt}=\frac{d\vec{r}}{ds}\frac{ds}{dt}=\frac{ds}{dt}\hat{u}_t\,.\]
+Notare che l'espressione $\frac{ds}{dt}$ rpende il nome di velocità scalare:
+\[v_s=\frac{ds}{dt}\,.\]
+
+\subsection{Accelerazione}
+Conoscendo il vettore velocità $\vec{v}(t)$, si considera accelerazione la variazione di questo vettore nel tempo. In formule:
+\[\vec{a}(t)=\frac{d\vec{v}(t)}{dt}=\frac{d^2 \vec{r}(t)}{dt^2}\,.\]
+Se ci si riferisce ad una traiettoria $\vec{s}(t)$, utilizzando le relazioni trovate in precedenza si avrà
+\[\vec{a}(t)=\frac{d\vec{v}(t)}{dt}=\frac{d}{dt}(v_s \hat{u}_t)=\frac{dv_s}{dt}\hat{u}_t+v_s\frac{d\hat{u}_t}{dt}\]
+
+\subsection{Classificazione dei moti elementari}
+Fissando l'attenzione sull'\textit{equazione oraria}, possiamo definire due importanti calssi di moto:
+\begin{enumerate}
+\item moti uniformi ($v_s\equiv \dot{s} = cost = \dot{s}_0$);
+\item{moti con accelerazione tangenziale costante ($a_t\equiv \ddot{s} = cost = \ddot{s}_0$).}
+\end{enumerate}
+Dal punto di vista geometrico, i moti con traiettoria notevole sono:
+\begin{enumerate}
+\item i \emph{moti rettilinei}, caratterizzati da $\rho \rightarrow \infty$;
+\item i \emph{moti circolari}, in cui $\rho = cost$.
+\end{enumerate}
+Dove $\rho$ è il raggio di curvatura.
+
+\subsection{Moti rettilinei}
+\begin{center}
+\begin{tabular}{r l}
+\textbf{Moto rettilineo uniforme} & $x(t)=v_0 t+x_0$\\[12pt]
+\textbf{Moto rettilineo uniformemente accelerato} & $x(t)=\frac{1}{2}a_0 t^2 + v_0 t +x_0$\\
+& $\dot{x}(t)=v(t)=a_0 t + v_0$\\
+\end{tabular}
+\end{center}
+
+\subsection{Moti circolari}
+Per i moti circolari di definiscono alcune grandezze. Per un generico moto circolare si può scrivere:
+\[\vec{v}(t)=\vec{\omega}(t)\times\vec{r}(t)\,.\]
+dove
+\[\vec{\omega}(t)=\frac{d\theta (t)}{dt}\hat{k}=\dot{\theta}\hat{k}\,.\]
+Si può anche definire un'\textbf{accelerazione angolare} come segue:
+\[\vec{\alpha}(t)=\frac{d\vec{\omega}}{dt}=\frac{d\omega}{dt}\hat{k}=\ddot{\theta}\hat{k}\,,\]
+e quindi
+\[\vec{a}=\vec{\alpha}\times\vec{r}+\vec{\omega}\times(\vec{\omega}\times\vec{r})\,.\]
+\bigskip
+\subsection{Moto circolare uniforme}
+Detto $T$ il periodo del moto, si definisce la \textbf{pulsazione} come:
+\[\omega_0=2\pi\nu=\dfrac{2\pi}{T}\,.\]
+\subsection{Moto oscillatorio armonico}
+Si consideri un corpo che si muove lungo una retta con la seguente legge oraria:
+\[x(t)=A\cos(\omega_0 t+\varphi_0)\,,\]
+possiamo calcolare la velocità e l'accelerazione per ogni instante di $t$:
+\begin{align*}
+\begin{cases}
+v_x=-\omega_0 A \sin(\omega_0 t + \varphi_0)\\
+a_x=-\omega_0^2 A \cos(\omega_0 t + \varphi_0)=-\omega_0^2x
+\end{cases}
+\end{align*}
+L'equazione differenziale del moto oscillatorio armonico, su una traiettoria qualunque vale:
+\[\ddot{s}+\omega_0^2s=0\]
+
+\end{document}
+
+
+
+
+
+
+
