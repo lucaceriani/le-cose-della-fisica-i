@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[12pt]{book}
 \usepackage[italian]{babel}
 \usepackage{amsmath}
 \usepackage[a4paper, total={6in, 9in}]{geometry}
@@ -6,7 +6,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{enumerate}
 
-\title{\vspace*{\fill}\Huge{Le cose della Fisica I}} % Title
+\title{\vspace*{\fill}\Huge{\textbf{Le cose della Fisica I}}} % Title
 \author{Luca Ceriani\bigskip}
 \date{Torino, \today\vspace*{\fill}}
 
@@ -14,9 +14,9 @@
 \maketitle
 \thispagestyle{empty}
 \newpage
-\section{Cinematica}
+\chapter{Cinematica}
 
-\subsection{Velocità}
+\section{Velocità}
 Tenendo conto della definizione di derivata di un vettore, la velocità si può scrivere come
 \[\vec{v}(t)=\frac{d\vec{r}(t)}{dt}\]
 Si consideri poi il vettore tangente alla traiettoria $\hat{u}_t$, esso può essere espresso come
@@ -27,13 +27,13 @@ e quindi
 Notare che l'espressione $\frac{ds}{dt}$ rpende il nome di velocità scalare:
 \[v_s=\frac{ds}{dt}\,.\]
 
-\subsection{Accelerazione}
+\section{Accelerazione}
 Conoscendo il vettore velocità $\vec{v}(t)$, si considera accelerazione la variazione di questo vettore nel tempo. In formule:
 \[\vec{a}(t)=\frac{d\vec{v}(t)}{dt}=\frac{d^2 \vec{r}(t)}{dt^2}\,.\]
 Se ci si riferisce ad una traiettoria $\vec{s}(t)$, utilizzando le relazioni trovate in precedenza si avrà
 \[\vec{a}(t)=\frac{d\vec{v}(t)}{dt}=\frac{d}{dt}(v_s \hat{u}_t)=\frac{dv_s}{dt}\hat{u}_t+v_s\frac{d\hat{u}_t}{dt}\]
 
-\subsection{Classificazione dei moti elementari}
+\section{Classificazione dei moti elementari}
 Fissando l'attenzione sull'\textit{equazione oraria}, possiamo definire due importanti calssi di moto:
 \begin{enumerate}
 \item moti uniformi ($v_s\equiv \dot{s} = cost = \dot{s}_0$);
@@ -46,7 +46,7 @@ Dal punto di vista geometrico, i moti con traiettoria notevole sono:
 \end{enumerate}
 Dove $\rho$ è il raggio di curvatura.
 
-\subsection{Moti rettilinei}
+\section{Moti rettilinei}
 \begin{center}
 \begin{tabular}{r l}
 \textbf{Moto rettilineo uniforme} & $x(t)=v_0 t+x_0$\\[12pt]
@@ -55,7 +55,7 @@ Dove $\rho$ è il raggio di curvatura.
 \end{tabular}
 \end{center}
 
-\subsection{Moti circolari}
+\section{Moti circolari}
 Per i moti circolari di definiscono alcune grandezze. Per un generico moto circolare si può scrivere:
 \[\vec{v}(t)=\vec{\omega}(t)\times\vec{r}(t)\,.\]
 dove
@@ -65,10 +65,10 @@ Si può anche definire un'\textbf{accelerazione angolare} come segue:
 e quindi
 \[\vec{a}=\vec{\alpha}\times\vec{r}+\vec{\omega}\times(\vec{\omega}\times\vec{r})\,.\]
 \bigskip
-\subsection{Moto circolare uniforme}
+\section{Moto circolare uniforme}
 Detto $T$ il periodo del moto, si definisce la \textbf{pulsazione} come:
 \[\omega_0=2\pi\nu=\dfrac{2\pi}{T}\,.\]
-\subsection{Moto oscillatorio armonico}
+\section{Moto oscillatorio armonico}
 Si consideri un corpo che si muove lungo una retta con la seguente legge oraria:
 \[x(t)=A\cos(\omega_0 t+\varphi_0)\,,\]
 possiamo calcolare la velocità e l'accelerazione per ogni instante di $t$:
