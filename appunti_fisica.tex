@@ -1,10 +1,13 @@
-\documentclass[12pt]{book}
+\documentclass[12pt, oneside]{book}
 \usepackage[italian]{babel}
 \usepackage{amsmath}
 \usepackage[a4paper, total={6in, 9in}]{geometry}
 \linespread{1.33}
 \usepackage[utf8]{inputenc}
 \usepackage{enumerate}
+\usepackage{makeidx}
+
+\newcommand{\pvec}[1]{\vec{#1}\mkern2mu\vphantom{#1}}
 
 \title{\vspace*{\fill}\Huge{\textbf{Le cose della Fisica I}}} % Title
 \author{Luca Ceriani\bigskip}
@@ -14,6 +17,7 @@
 \maketitle
 \thispagestyle{empty}
 \newpage
+
 \chapter{Cinematica}
 
 \section{Velocità}
@@ -23,26 +27,26 @@ Si consideri poi il vettore tangente alla traiettoria $\hat{u}_t$, esso può ess
 \[\hat{u}_t=\lim_{\Delta s\rightarrow 0}\dfrac{\Delta\vec{r}}{\Delta s}
 = \frac{d\vec{r}}{ds}\]
 e quindi
-\[\vec{v}=\frac{d\vec{r}}{dt}=\frac{d\vec{r}}{ds}\frac{ds}{dt}=\frac{ds}{dt}\hat{u}_t\,.\]
+\[\vec{v}=\frac{d\vec{r}}{dt}=\frac{d\vec{r}}{ds}\frac{ds}{dt}=\frac{ds}{dt}\hat{u}_t~.\]
 Notare che l'espressione $\frac{ds}{dt}$ rpende il nome di velocità scalare:
-\[v_s=\frac{ds}{dt}\,.\]
+\[v_s=\frac{ds}{dt}~.\]
 
 \section{Accelerazione}
 Conoscendo il vettore velocità $\vec{v}(t)$, si considera accelerazione la variazione di questo vettore nel tempo. In formule:
-\[\vec{a}(t)=\frac{d\vec{v}(t)}{dt}=\frac{d^2 \vec{r}(t)}{dt^2}\,.\]
+\[\vec{a}(t)=\frac{d\vec{v}(t)}{dt}=\frac{d^2 \vec{r}(t)}{dt^2}~.\]
 Se ci si riferisce ad una traiettoria $\vec{s}(t)$, utilizzando le relazioni trovate in precedenza si avrà
 \[\vec{a}(t)=\frac{d\vec{v}(t)}{dt}=\frac{d}{dt}(v_s \hat{u}_t)=\frac{dv_s}{dt}\hat{u}_t+v_s\frac{d\hat{u}_t}{dt}\]
 
 \section{Classificazione dei moti elementari}
 Fissando l'attenzione sull'\textit{equazione oraria}, possiamo definire due importanti calssi di moto:
 \begin{enumerate}
-\item moti uniformi ($v_s\equiv \dot{s} = cost = \dot{s}_0$);
-\item{moti con accelerazione tangenziale costante ($a_t\equiv \ddot{s} = cost = \ddot{s}_0$).}
+	\item moti uniformi ($v_s\equiv \dot{s} = cost = \dot{s}_0$);
+	\item{moti con accelerazione tangenziale costante ($a_t\equiv \ddot{s} = cost = \ddot{s}_0$).}
 \end{enumerate}
 Dal punto di vista geometrico, i moti con traiettoria notevole sono:
 \begin{enumerate}
-\item i \emph{moti rettilinei}, caratterizzati da $\rho \rightarrow \infty$;
-\item i \emph{moti circolari}, in cui $\rho = cost$.
+	\item i \emph{moti rettilinei}, caratterizzati da $\rho \rightarrow \infty$;
+	\item i \emph{moti circolari}, in cui $\rho = cost$.
 \end{enumerate}
 Dove $\rho$ è il raggio di curvatura.
 
@@ -57,29 +61,59 @@ Dove $\rho$ è il raggio di curvatura.
 
 \section{Moti circolari}
 Per i moti circolari di definiscono alcune grandezze. Per un generico moto circolare si può scrivere:
-\[\vec{v}(t)=\vec{\omega}(t)\times\vec{r}(t)\,.\]
+\[\vec{v}(t)=\vec{\omega}(t)\times\vec{r}(t)~.\]
 dove
-\[\vec{\omega}(t)=\frac{d\theta (t)}{dt}\hat{k}=\dot{\theta}\hat{k}\,.\]
+\[\vec{\omega}(t)=\frac{d\theta (t)}{dt}\hat{k}=\dot{\theta}\hat{k}~.\]
 Si può anche definire un'\textbf{accelerazione angolare} come segue:
-\[\vec{\alpha}(t)=\frac{d\vec{\omega}}{dt}=\frac{d\omega}{dt}\hat{k}=\ddot{\theta}\hat{k}\,,\]
+\[\vec{\alpha}(t)=\frac{d\vec{\omega}}{dt}=\frac{d\omega}{dt}\hat{k}=\ddot{\theta}\hat{k}~,\]
 e quindi
-\[\vec{a}=\vec{\alpha}\times\vec{r}+\vec{\omega}\times(\vec{\omega}\times\vec{r})\,.\]
+\[\vec{a}=\vec{\alpha}\times\vec{r}+\vec{\omega}\times(\vec{\omega}\times\vec{r})~.\]
 \bigskip
+
 \section{Moto circolare uniforme}
 Detto $T$ il periodo del moto, si definisce la \textbf{pulsazione} come:
-\[\omega_0=2\pi\nu=\dfrac{2\pi}{T}\,.\]
+\[\omega_0=2\pi\nu=\dfrac{2\pi}{T}~.\]
+
 \section{Moto oscillatorio armonico}
 Si consideri un corpo che si muove lungo una retta con la seguente legge oraria:
-\[x(t)=A\cos(\omega_0 t+\varphi_0)\,,\]
+\[x(t)=A\cos(\omega_0 t+\varphi_0)~,\]
 possiamo calcolare la velocità e l'accelerazione per ogni instante di $t$:
 \begin{align*}
-\begin{cases}
-v_x=-\omega_0 A \sin(\omega_0 t + \varphi_0)\\
-a_x=-\omega_0^2 A \cos(\omega_0 t + \varphi_0)=-\omega_0^2x
-\end{cases}
+	\begin{cases}
+		v_x=-\omega_0 A \sin(\omega_0 t + \varphi_0)\\
+		a_x=-\omega_0^2 A \cos(\omega_0 t + \varphi_0)=-\omega_0^2x
+	\end{cases}
 \end{align*}
 L'equazione differenziale del moto oscillatorio armonico, su una traiettoria qualunque vale:
 \[\ddot{s}+\omega_0^2s=0\]
+
+\section{Moto parabolico}
+In breve le formule del moto parabolico nelle componenti $x$ e $y$:
+\begin{align*}
+	\begin{cases}
+		x(t)=(v_0 \cos(\alpha)t)\\
+		y(t)=(v_0 \sin(\alpha)t-\frac{1}{2}gt^2)
+	\end{cases}~,
+\end{align*}
+mentre la gittata, intesa come la distanza percorsa su $x$ se il lancio è avvenuto ad altezza 0 sarà:
+\[y=\dfrac{v_{0y}}{v_{0x}}x-\dfrac{1}{2}\dfrac{g}{v_{0x}^2}x^2~.\]
+
+\section{Trasformazione di velocità e di accelerazione}
+Se si suppongo lo \emph{spazio e il tempo assoluti} e considerato $\vec{R}=\overrightarrow{OO'}$ e $\pvec{r}'=\vec{r}+\vec{R}$, allora si domostra facilmente che:
+\[\vec{v}=\pvec{v}'+\vec{v_\tau}\]
+dove $\vec{v_\tau}$ è detta \emph{velocità di trascinamento}.
+Posto $\vec{V}(t)=\dfrac{d\vec{R}}{dt}$, allore la velocità di trascinamento si potrà esprimere nella forma
+\begin{equation}
+\vec{v}_\tau(t)=\vec{V}(t)+\vec{\omega}(t)\times[\vec{r}(t)-\vec{R}(t)]~.
+\end{equation}
+Questo perché la velocità di trascinamento non è uguale per ogni punto di $S'$ (qualsiasi caso di moto non puramente traslatorio). In particolare si possono dietinguere due casi:
+\begin{enumerate}[a)]
+	\item $\vec{\omega}=0$\\
+	in questo caso si parla di \textbf{moto traslatorio}, tutti i punti di $S'$ si muovono alla stessa velocità: $\vec{v}_\tau(t)=\vec{V}$~;
+	\item $\vec{\omega}\neq 0$\\
+	$\vec{v}_\tau$ varia da punto a punto, se si considera la sola coponente di rotazione la (1.1) può essere riscritta come
+	\[\vec{v}_\tau=\vec{\omega}\times(\vec{r}-\vec{R})\]
+\end{enumerate}
 
 \end{document}
 
