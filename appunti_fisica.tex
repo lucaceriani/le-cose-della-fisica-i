@@ -5,19 +5,20 @@
 \linespread{1.33}
 \usepackage[utf8]{inputenc}
 \usepackage{enumerate}
-%\usepackage{afterpage}
+%\usepackage{afterpage} %decommentare per agina vuota dopo il titolo
 \usepackage{makeidx}
 
 \newcommand{\pvec}[1]{\vec{#1}\mkern2mu\vphantom{#1}}
 
-\title{\vspace*{\fill}\Huge{\textbf{Le cose della Fisica I}}} % Title
+\title{\vspace*{\fill}\Huge{\textbf{Le cose della Fisica I}}}
 \author{Luca Ceriani\bigskip}
 \date{Torino, \today\vspace*{\fill}}
 
 \begin{document}
+\frenchspacing
 \maketitle
 \newpage
-%\afterpage{\null\thispagestyle{empty}\newpage}
+%\afterpage{\null\thispagestyle{empty}\newpage} % decommentare per pagina vuota dopo il titolo
 \cleardoublepage
 
 \chapter{Cinematica}
@@ -160,6 +161,15 @@ e per $\vec V = costante$ si ha:
 	\end{cases}~.
 \end{align*}
 \chapter{Dinamica}
+Il problema tipico della meccanica è determinare il moto di un corpo che interagisce con l'ambiente circostante caratterizzato dalla presenza di altri corpi. Newton formula le tre leggi della dinamica che recitano:
+\begin{enumerate}
+\item \textit{``Ciascun corpo persisterà nel suo stato di quiete o di moto rettilineo uniforme finché non è indotto a cambiare il suo stato da forze che agiscono su di esso.''}
+\item \textit{``L'accelerazione prodotta da una forza è proporzionale alla massa inerziale del corpo''}:
+\[\vec F = m\vec a~.\]
+\item \textit{``Ad ogni forza ne corrisponde una uguale e contraria''}
+
+\end{enumerate}
+
 \end{document}
 
 
