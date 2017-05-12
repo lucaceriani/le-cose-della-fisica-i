@@ -26,7 +26,7 @@
 Tenendo conto della definizione di derivata di un vettore, la velocità si può scrivere come
 \[\vec{v}(t)=\frac{d\vec{r}(t)}{dt}\]
 Si consideri poi il vettore tangente alla traiettoria $\hat{u}_t$, esso può essere espresso come
-\[\hat{u}_t=\lim_{\Delta s\rightarrow 0}\dfrac{\Delta\vec{r}}{\Delta s}
+\[\hat{u}_t=\lim_{\Delta s\to 0}\dfrac{\Delta\vec{r}}{\Delta s}
 = \frac{d\vec{r}}{ds}\]
 e quindi
 \[\vec{v}=\frac{d\vec{r}}{dt}=\frac{d\vec{r}}{ds}\frac{ds}{dt}=\frac{ds}{dt}\hat{u}_t~.\]
@@ -103,6 +103,20 @@ In breve le formule del moto parabolico nelle componenti $x$ e $y$:
 mentre la gittata, intesa come la distanza percorsa su $x$ se il lancio è avvenuto ad altezza 0 sarà:
 \[y=\dfrac{v_{0y}}{v_{0x}}x-\dfrac{1}{2}\dfrac{g}{v_{0x}^2}x^2~.\]
 
+\section{Velocità e accelerazione in coordinate polari piane}
+Considerando un sistema di coordinate polari, nei quali la posizione è definita da $\vec r = r \hat u_r$, si definiscono velocità e accelerazione come segue:
+\begin{center}\begin{tabular}{r c l}
+$\vec v$ & $=$ & $\dot r \hat u_r + r\dot\theta \hat u_\theta$\\
+$\vec a$ & $=$ &$(\ddot r - r\dot \theta^2)\hat u_r + (2\dot r \dot \theta + r\ddot \theta)\hat u_\theta$
+\end{tabular}\end{center}
+
+\section{Problema inverso della cinematica}
+Dato che $\vec v = \dfrac{d\vec r}{dt}$ e $\vec a = \dfrac{d\vec{v}}{dt}$, si possono scrivere le relazioni inverse in termini di integrali, ovvero:
+\begin{center}\begin{tabular}{r c l}
+$\vec r (t)$ & $=$ & $\vec r (t_0) + {\displaystyle \int_{t_0}^t \vec v (t')dt'}$\\[12pt]
+$\vec v (t)$ & $=$ & $\vec v (t_0) + {\displaystyle \int_{t_0}^t \vec a (t')dt'}$
+\end{tabular}\end{center}
+
 \section{Trasformazione di velocità e di accelerazione}
 Se si suppongo lo \emph{spazio e il tempo assoluti} e considerato $\vec{R}=\overrightarrow{OO'}$ e $\pvec{r}'=\vec{r}+\vec{R}$, allora si domostra facilmente che:
 \[\vec{v}=\pvec{v}'+\vec{v_\tau}\]
@@ -145,6 +159,7 @@ e per $\vec V = costante$ si ha:
 		\vec a = \pvec a'
 	\end{cases}~.
 \end{align*}
+\chapter{Dinamica}
 \end{document}
 
 
