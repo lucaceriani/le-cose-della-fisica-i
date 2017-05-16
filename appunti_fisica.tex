@@ -20,6 +20,7 @@
 \newpage
 %\afterpage{\null\thispagestyle{empty}\newpage} % decommentare per pagina vuota dopo il titolo
 \cleardoublepage
+\tableofcontents
 
 \chapter{Cinematica}
 
@@ -91,7 +92,11 @@ possiamo calcolare la velocità e l'accelerazione per ogni instante di $t$:
 	\end{cases}
 \end{align*}
 L'equazione differenziale del moto oscillatorio armonico, su una traiettoria qualunque vale:
-\[\ddot{s}+\omega_0^2s=0\]
+\begin{equation}
+\label{diff oscillatorio}
+\ddot{s}+\omega_0^2s=0
+\end{equation}
+
 
 \section{Moto parabolico}
 In breve le formule del moto parabolico nelle componenti $x$ e $y$:
@@ -161,14 +166,39 @@ e per $\vec V = costante$ si ha:
 	\end{cases}~.
 \end{align*}
 \chapter{Dinamica}
+\section{Le tre leggi di Newton}
 Il problema tipico della meccanica è determinare il moto di un corpo che interagisce con l'ambiente circostante caratterizzato dalla presenza di altri corpi. Newton formula le tre leggi della dinamica che recitano:
 \begin{enumerate}
 \item \textit{``Ciascun corpo persisterà nel suo stato di quiete o di moto rettilineo uniforme finché non è indotto a cambiare il suo stato da forze che agiscono su di esso.''}
 \item \textit{``L'accelerazione prodotta da una forza è proporzionale alla massa inerziale del corpo''}:
 \[\vec F = m\vec a~.\]
-\item \textit{``Ad ogni forza ne corrisponde una uguale e contraria''}
-
+\item \textit{``Ad ogni forza ne corrisponde una uguale e contraria.''}
 \end{enumerate}
+\section{Teorema delle quantità di moto}
+Facendo riferimento alla seconda legge di Newton, si può affermare che ogni volta che un corpo cambia la sua quantità di moto è a causa di una forza e si può scrivere la seguente relazione:
+\begin{equation}
+\label{f=dp/dt}
+\vec{F}=\dfrac{d\vec{p}}{dt}=\dfrac{d(m\vec{v})}{dt}=m\dfrac{d\vec{v}}{dt}=m\vec{a}~.
+\end{equation}
+Si definisce poi l'impulso di una forza come l'azione di quella forza nel tempo, in formule:
+\begin{equation}
+\label{impulso}
+\vec{J}=\int_{t1}^{t2}\vec{F}(t)dt
+\end{equation}
+Data l'equazione (\ref{f=dp/dt}) si può scrivere $\vec{F}dt=d\vec{p}$, da cui, considerando la (\ref{impulso}) si ricava che
+\[\vec J =\int_{t1}^{t2} d\vec{q}=\vec{q}_2-\vec{q}_1\equiv\Delta\vec{q}~.\]
+
+\section{Legge di Hooke}
+Nel caso di una molla ideale la forza prodotta dalla molla segue la \textit{Legge di Hooke} che recita come segue:
+\[\vec{F}_e=-kx\hat{u}_x~.\]
+Partendo da questa legge è facile dimostrare che un corpo di massa $m$ su cui agisce una forza elastica si muove di moto oscillatorio armonico, infatti
+\[\vec{F}_e=-m\vec a \Rightarrow -kx=m\ddot x\Rightarrow \ddot x + \dfrac{k}{m}x=0~,\]
+che è esattamente l'equazione differenziale (\ref{diff oscillatorio}), la cui soluzione generale è del tipo
+\[x(t)=A\cos (\omega_0 t + \varphi_0) \textnormal{, con } \omega_0 = \sqrt{\dfrac{k}{m}}~.\]
+
+\section{Pendolo semplice}
+
+
 
 \end{document}
 
