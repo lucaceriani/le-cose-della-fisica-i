@@ -2,11 +2,14 @@
 \usepackage[italian]{babel}
 \usepackage{amsmath}
 \usepackage[a4paper]{geometry}
-\linespread{1.33}
+\linespread{1.3}
 \usepackage[utf8]{inputenc}
 \usepackage{enumerate}
 %\usepackage{afterpage} %decommentare per agina vuota dopo il titolo
 \usepackage{makeidx}
+
+\usepackage{endnotes} %per le note a fine libro
+\renewcommand{\notesname}{Note}
 
 \newcommand{\pvec}[1]{\vec{#1}\mkern2mu\vphantom{#1}}
 
@@ -21,6 +24,12 @@
 %\afterpage{\null\thispagestyle{empty}\newpage} % decommentare per pagina vuota dopo il titolo
 \cleardoublepage
 \tableofcontents
+
+
+%======================================
+%				CINEMATICA
+%======================================
+
 
 \chapter{Cinematica}
 
@@ -145,7 +154,6 @@ Si dimostra che la dipendenza tra $\vec{a}$ e $\pvec{a}'$ è più conmplessa e r
 \label{aaprime}
 \vec{a}=\pvec{a}' + \vec{a}_\tau + \vec{a}_{co}~.
 \end{equation}
-\newpage
 Dove, considerando la (\ref{ainaplha}) e la (\ref{aaprime}) si può scrivere:
 \[\vec a_\tau=\vec A+\vec \alpha \times(\vec{r}-\vec{R})+\vec{\omega}\times[\vec{\omega}\times (\vec{r}-\vec{R})]\]
 e
@@ -165,6 +173,13 @@ e per $\vec V = costante$ si ha:
 		\vec a = \pvec a'
 	\end{cases}~.
 \end{align*}
+
+
+%======================================
+%				DINAMICA
+%======================================
+
+
 \chapter{Dinamica}
 \section{Le tre leggi di Newton}
 Il problema tipico della meccanica è determinare il moto di un corpo che interagisce con l'ambiente circostante caratterizzato dalla presenza di altri corpi. Newton formula le tre leggi della dinamica che recitano:
@@ -175,11 +190,13 @@ Il problema tipico della meccanica è determinare il moto di un corpo che intera
 \item \textit{``Ad ogni forza ne corrisponde una uguale e contraria.''}
 \end{enumerate}
 \section{Teorema delle quantità di moto}
-Facendo riferimento alla seconda legge di Newton, si può affermare che ogni volta che un corpo cambia la sua quantità di moto è a causa di una forza e si può scrivere la seguente relazione:
+Facendo riferimento alla seconda legge di Newton, si può affermare che ogni volta che un corpo cambia la sua quantità di moto è a causa di una forza e si può scrivere la seguente relazione
+\endnote{$\dfrac{d\vec{p}}{dt}=\dfrac{d(m\vec{v})}{dt}=m\dfrac{d\vec{v}}{dt}=m\vec{a}=\vec{F}$}
 \begin{equation}
 \label{f=dp/dt}
-\vec{F}=\dfrac{d\vec{p}}{dt}=\dfrac{d(m\vec{v})}{dt}=m\dfrac{d\vec{v}}{dt}=m\vec{a}~.
+\vec{F}=\dfrac{d\vec{p}}{dt}~.
 \end{equation}
+
 Si definisce poi l'impulso di una forza come l'azione di quella forza nel tempo, in formule:
 \begin{equation}
 \label{impulso}
@@ -197,14 +214,121 @@ che è esattamente l'equazione differenziale (\ref{diff oscillatorio}), la cui s
 \[x(t)=A\cos (\omega_0 t + \varphi_0) \textnormal{, con } \omega_0 = \sqrt{\dfrac{k}{m}}~.\]
 
 \section{Pendolo semplice}
+Le uniche forze che agiscono su di un pendolo semplice sono la forza di gravità e la reazione vincolare del filo. Per determinare l'equazione del moto, si può quindi scrivere
+\[\vec F_g + \vec R = m\vec a~.\]
+Utilizzando le coordinate intrinseche per descrivere la posizione del pendolo e tenuto conto dell'accelerazione centripeta, l'equazione del moto diventa:
+\begin{align*}
+\begin{cases}
+-mg\sin (\theta)=m\ddot s\\
+-mg\cos (\theta)+R=m\dfrac{\dot s^2}{L}
+\end{cases}
+\end{align*}
+Ricordandosi che $\theta = \dfrac{s}{L}$, la prima equazione diventa:
+\[\ddot s + g\sin\left(\dfrac{s}{L}\right)=0~,\]
+che, per oscillazioni piccole si può riscrivere come
+\[\ddot s +\dfrac{g}{L}s=0\]
+che è la nota equazione del moto oscillatorio armonico di pulsazione $\omega_0 = \sqrt{\dfrac{g}{L}}$. L'oscillazione ha periodo
+\[T=\dfrac{2\pi}{\omega_0}=2\pi\sqrt{\dfrac{L}{g}}~.\]
+
+\section{Attrito radente statico}
+Se si definisce con $\vec R_t$ la forza d'attrito che si oppone la moto, il valore massimo dell'attrito può essere scritto come $R_t^{max}=\mu_s N$ e la legge dell'attrito risulta
+\[ R_t \leq \mu_s N \]
+
+\section{Attrito randente dinamico}
+Come l'attrito statico, l'attrito dinamico si presenta nella forma $R_t=\mu_d R_n$. La forza $\vec R_t$ è doretta in verso opposto al versore $\hat u_v$ della velocità relativa $v$ tra le due superfici di contatto, per cui:
+\[\vec R_t = -\mu_dN\hat u_v\]
+
+
+%======================================
+%			ENERGIA E LAVORO
+%======================================
+
+
+\chapter{Energia e lavoro}
+\section{Lavoro di una forza}
+Per una forza$\vec F$ che non varia da punto a punto si definisce il lavoro di quella forza come prodotto tra la forza e lo spostamento:
+\[W_{A\to B}=\vec{F}\cdot\vec{AB}\equiv\vec{F}\cdot\Delta\vec r~,\]
+che, in modulo, diventa
+\[W=F\Delta r\cos (\theta)~.\]
+Si definisce lavoro elementare di una forza $dL=\vec{F}\cdot d\vec r$, integrando si ottiene:
+\[L_{A\to B}=\int^B_A \vec{F}\cdot d\vec r~.\]
+
+\section{Energia cinetica}
+Si definisce l'energia cinetica associata a un corpo di massa $m$ e di velocità $v$ come
+\[E_k=\dfrac{1}{2}mv^2~.\]
+Si può dimostrare facilmente che
+\begin{equation}
+\label{lavoro = energia cinetica}
+L_{A\to B}=E_k^A-E_k^B
+\end{equation}
+scrivendo
+\[dL=\vec{F}\cdot d\vec{r}=m\vec{a}\cdot d\vec{r}=m\vec v \cdot\vec a dt\]
+e poiché l'energia cinetica $E_k$ può essere scritta come $\frac{1}{2}m\vec v\cdot \vec v$, risulta
+\[dE_k=d\left(\dfrac{1}{2}m\vec v \cdot\vec v\right) =m\vec v \cdot \vec a dt~,\]
+quindi
+\[dL=dE_k\]
+che, interegrando diventa la (\ref{lavoro = energia cinetica}).
+
+\section{Forze conservative}
+Una forza si dice conservativa se e solo se il lavoro che essa compie su un oggetto generico dipende solo dalla posizione iniziale e quella finale indipendentemente dalla traiettoria seguita.\\
+\`{E} ovvio che quindi che lungo un camminco chiuso, nel quale la posizione di partenza $P_1$ e la posizione di arrivo $P_2$ coincidano il lavoro svolto è nullo, questa relazione si puù scrivere come:
+\[\oint_{P_1}^{P_2} \vec F \cdot d\vec r \equiv 0 ~,\]
+questa relazione prende il nome di \emph{circuitazione}
+
+\section{Energia potenziale}
+Se una forza è conservativa, possiamo associare ad esse una quantità $E_p$ che prende il nome di \emph{energia potenziale}, che dipende soltanto dalla posizione della particella, in modo tale che valga:
+\[W_{(P_1,P_2)}=E_p (P_1)-E_p (P_2)~.\]
+Nel caso di una forza conservativa, la relazione precedente può essere scritta come 
+\[W_{(P_1,P_2)}=E_p (P_1)-E_p (P_2)=E_{k,2}-E_{k,1}~.\]
+Se si definisce l'\emph{energia meccanica totale} come $E\equiv E_k+E_p$, essa si conserva durante il moto della particella
+\[E\equiv E_p + E_k=E_p+\dfrac{1}{2}mv^2=costante~.\]
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\theendnotes
 \end{document}
-
-
-
-
-
-
-
